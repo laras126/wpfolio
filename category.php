@@ -83,29 +83,20 @@
 			<div class="img-frame">
 				
 				<a title="'<?php the_title_attribute(); ?>', <?php the_time('Y') ?>" href="<?php the_permalink() ?>">
-				
-				
-				
+								
 				
 				<?php 
-				
-				
-				#If there is a post thumbnail , it will display. If not it is the thumb function. These
-				# can be edited in the functions.php file.
-				
+				#If there is a featured image, it will be the post thumbnail. If not it is the first of the gallery. If no images, a <span> class is added to preserve the layout. 
+					
 				if(has_post_thumbnail()){
 					the_post_thumbnail();
 				}
-				else{
-			
-				
-				echo get_thumb($post->ID); 
-			}
-				
-			
-				
-				
-				?>
+				elseif(is_attachment()) {
+					echo get_thumb($post->ID); 
+				}
+				else { ?>
+					<span class="no_thumb"></span>
+				<?php } ?>
 				
 				
 				

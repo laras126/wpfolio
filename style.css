@@ -531,6 +531,7 @@ width: 440px;
 .gallery-caption{
 	margin-left: 0;
 }
+
 /* @end */
 /* @group edit-link styles */
 .edit-link a:before{
@@ -604,4 +605,15 @@ div.archive-result img{
 img#wpstats{
 position: absolute;
 left: -999em;
+}
+
+/* add blank space for posts with no thumbnail */
+
+.no_thumb{
+	display:block;
+	margin:auto;
+	width:150px;
+	height:150px;
+	background-color: fuchsia;
+	border: black solid 1px;
 }
