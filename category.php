@@ -86,19 +86,20 @@
 								
 				
 				<?php 
-				#If there is a featured image, it will be the post thumbnail. If not it is the first of the gallery. If no images, a <span> class is added to preserve the layout. 
-					
-				if(has_post_thumbnail()){
-					the_post_thumbnail();
-				}
-				elseif(is_attachment()) {
-					echo get_thumb($post->ID); 
-				}
+				#If there is a featured image, it will be the post thumbnail. If not it is the first of the gallery. If no images, a <span> class is added to retain the layout.
+				
+				if(post_has_image($post->ID)){
+
+					if(has_post_thumbnail()){
+					    the_post_thumbnail();
+					}
+					else {
+					    echo get_thumb($post->ID); 
+					}
+				} 
 				else { ?>
-					<span class="no_thumb"></span>
+				    <span class="no_thumb"></span>
 				<?php } ?>
-				
-				
 				
 				</a> 
 				<br />

@@ -35,6 +35,38 @@ add_filter( 'gallery_style', 'wpfolio_remove_gallery_css' );
 // END - Remove inline styles on gallery shortcode
 
 
+// Find out if the post has images, returns true or false
+function has_post_image($post_ID) {
+	$content = $post->post_content;
+	$searchimages = '~<img [^>]* />~';
+	
+	/*Run preg_match_all to grab all the images and save the results in $pics*/
+	
+	preg_match_all( $searchimages, $content, $pics );
+	
+	// Check to see if we have at least 1 image
+	$numimgs = count($pics[0]);
+	
+	$imgargs = array(
+	    'post_type' => 'post',
+	    'numberposts' => 1,
+	    'post_status' => null,
+	    'post_parent' => $post_ID,
+	    $numimgs > 0
+    );
+	
+	get_posts($imgargs);
+	
+	if ($imgargs) {
+	    return true;
+    } else {
+       return false;
+    }
+} 
+
+// END - check for images
+
+
 // Thumbnail Function - this creates a default thumbnail if one is specified
 function get_thumb ($post_ID){
     $thumbargs = array(
@@ -48,6 +80,7 @@ function get_thumb ($post_ID){
         return wp_get_attachment_image($thumb[0]->ID);
     }
 } 
+
 
 // This adds support for post thumbnails of 150px square
 add_theme_support('post-thumbnails');
