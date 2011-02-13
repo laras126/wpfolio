@@ -81,6 +81,7 @@ function get_thumb ($post_ID){
     }
 } 
 
+//just checking pushing...
 
 // This adds support for post thumbnails of 150px square
 add_theme_support('post-thumbnails');
