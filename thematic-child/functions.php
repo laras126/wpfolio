@@ -1,13 +1,5 @@
 <?php
 
-
-// Shortcode practice
-
-function shortURL() {
-	return 'http://notlaura.com/';
-}
-add_shortcode('myurl', 'shortURL');
-
 ///////////////////////
 // ADDING A TAXONOMY //
 ///////////////////////
