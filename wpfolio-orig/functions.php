@@ -18,13 +18,12 @@ function lorem() {
 add_shortcode('lorem', 'lorem');
 
 
-// Shortcode to add wide margins to a post page
+// Shortcode to add wide margins to a post page - works as is, but is applied in post lists
 
-function wide_margins_shortcode ($content = null) {
-	//extract(shortcode_atts(array(
-	//	"div class" => 'hello';
-	//), $atts));
-	return '<div class="widemargins">'.$content.'</div>';
+function wide_margins_shortcode ($atts, $content = null) {
+	if(TRUE /*add a condition to apply this only on single posts*/)) {
+		return '<div class="widemargins">' . do_shortcode($content) . '</div>';
+	}
 }
 add_shortcode("wide", "wide_margins_shortcode");
 
