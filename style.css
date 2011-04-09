@@ -365,6 +365,10 @@ h2.post-title a{
 	padding: 0;
 	margin: 0;
 }
+h4.notable-date a{
+	font-weight: normal;
+	font-style: normal;
+}
 .notable-post h2, .notable-post h3{
 	line-height: 1.8em;
 }
