@@ -30,11 +30,6 @@ require_once(THEMELIB . '/theme-options.php');
 // IMAGES //
 ////////////
 
-// This sets the Large image size to 900px
-
-if ( ! isset( $content_width ) ) 
-	$content_width = 900;
-
 // Remove inline styles on gallery shortcode
 
 function wpfolio_remove_gallery_css( $css ) {
