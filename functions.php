@@ -160,8 +160,8 @@ function wpfolio_admin_footer() {
 } 
 add_filter('admin_footer_text', 'wpfolio_admin_footer');
 	
-// Testing to see if the PHP version is up to date. Give and error prompting if not.
-if (version_compare(PHP_VERSION, '5.3.0', '<=')) {
+// Testing to see if the PHP version is up to date. If it is, add a WPFolio RSS feed widget, and if it's not, add a widget prompting an upgrade.
+if (version_compare(PHP_VERSION, '5.3.0', '>=')) {
 
 	// Add WPFolio Wiki site as a Dashboard Feed 
 	// Thanks to bavotasan.com: http://bavotasan.com/tutorials/display-rss-feed-with-php/ 
